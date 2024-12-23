@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #212121;
+    font-family: 'League Spartan', sans-serif;
+    color: #ffffff;
+}
+
+.country-list {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    place-items: center;
+    grid-gap: 2vw;
+
+    width: 75vw;
+
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+}
+
+.country {
+    border-radius: 1.25vw;
+
+    background-color: #141414;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 15vw;
+}
+
+.country-flag {
+    object-fit: cover;
+    
+    border-radius: 1.25vw;
+
+    height: 10vw;
+    width: 15vw;
+}
+
+.country-content {
+    margin: 1vw;
+
+    width: 13vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.country-name {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+
+    text-transform: uppercase;
+}
+
+.country-info {
+    margin: 0;
+}
+
+.overflowing {
+    /* Hide overflowing text */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    width: 12rem;
+}

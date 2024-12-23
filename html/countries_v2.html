@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/countries_v2.css">
+    <title>REST Countries</title>
+</head>
+<body>
+    <header>
+        <nav class="pagination">
+            <button id="topPreviousPage" class="pagination-button previous-page">PRÉC</button>
+            <p id="topNumPage" class="page-number"></p>
+            <button id="topNextPage" class="pagination-button next-page">SUIV</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="country-list" class="country-list"></div>
+    </main>
+
+    <footer>
+        <nav class="pagination">
+            <button id="bottomPreviousPage" class="pagination-button previous-page">PRÉC</button>
+            <p id="bottomNumPage" class="page-number"></p>
+            <button id="bottomNextPage" class="pagination-button next-page">SUIV</button>
+        </nav>
+    </footer>
+
+    <script src="../data/data.js"></script>
+    <script src="../entity/Country.js"></script>
+    <script src="../entity/Currency.js"></script>
+    <script src="../entity/Language.js"></script>
+    <script src="../script/fill.js"></script>
+    <script src="../script/countries_v2.js"></script>
+</body>
+</html>

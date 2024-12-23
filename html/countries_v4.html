@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/countries_v4.css">
+    <title>REST Countries</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Filter -->
+        <div class="filter-div">
+            <!-- Filter Title -->
+            <p class="filter-p">Filtrer</p>
+            <!-- Filter Form -->
+            <form action="#" class="filter-form">
+                <!-- Filter Continent -->
+                <div class="filter-continent-div">
+                    <label for="continent">Continent</label>
+                    <select name="continent" id="filterContinent">
+                        <option value="empty" selected="selected"></option>
+                    </select>
+                </div>
+    
+                <!-- Filter Language -->
+                <div class="filter-language-div">
+                    <label for="language">Langue</label>
+                    <select name="language" id="filterLanguage">
+                        <option value="empty" selected="selected"></option>
+                    </select>
+                </div>
+    
+                <!-- Filter Country -->
+                <div class="filter-country-div">
+                    <label for="country">Pays</label>
+                    <input name="country" type="text" id="filterCountry">
+                </div>
+
+                <!-- Reset filters -->
+                <!-- Div and not button so the form is not sent -->
+                <div class="filter-reset" id="filterReset">Réinitialiser</div>
+            </form>
+        </div>
+        
+        <!-- header pagination -->
+        <nav class="pagination">
+            <button id="topPreviousPage" class="pagination-button previous-page">PRÉC</button>
+            <p id="topNumPage" class="page-number"></p>
+            <button id="topNextPage" class="pagination-button next-page">SUIV</button>
+        </nav>
+    </header>
+
+    <!-- Country list in main -->
+    <main>
+        <div id="country-list" class="country-list"></div>
+    </main>
+
+    <!-- Footer pagination -->
+    <footer>
+        <nav class="pagination">
+            <button id="bottomPreviousPage" class="pagination-button previous-page">PRÉC</button>
+            <p id="bottomNumPage" class="page-number"></p>
+            <button id="bottomNextPage" class="pagination-button next-page">SUIV</button>
+        </nav>
+    </footer>
+
+    <!-- Grey Filter for detail of flag -->
+    <div class="grey-filter hidden" id="greyFilter"></div>
+
+    <!-- Detail window -->
+    <div class="country-detail-container hidden" id="countryDetailContainer">
+        <!-- Country name -->
+        <header>
+            <p class="country-detail-name" id="countryDetailName"></p>
+        </header>
+        <!-- Country main -->
+        <main class="country-detail-main" id="countryDetailMain">
+            <!-- Generated left informations -->
+            <div class="country-detail-main-left" id="countryDetailMainLeft"></div>
+
+            <!-- Languages and borders -->
+            <div class="country-detail-main-right">
+                <div class="country-detail-border">
+                    <p class="country-detail-border-name">Voisin(s) :</p>
+                    <ul class="country-detail-border-list" id="countryDetailBorderList"></ul>
+                </div>
+                <div class="country-detail-language">
+                    <p class="country-detail-language-name">Langue(s) :</p>
+                    <ul class="country-detail-language-list" id="countryDetailLanguageList"></ul>
+                </div>
+            </div>
+        </main>
+        <!-- Country return button -->
+        <footer>
+            <button class="country-detail-close hidden" id="countryDetailClose">Retour</button>
+        </footer>
+    </div>
+
+    <!-- Flag focus -->
+    <img class="flag-detail hidden" src="" alt="Drapeau Complet " id="flagDetail">
+
+    <script src="../data/data.js"></script>
+    <script src="../entity/Country.js"></script>
+    <script src="../entity/Currency.js"></script>
+    <script src="../entity/Language.js"></script>
+    <script src="../script/fill.js"></script>
+    <script src="../script/test.js"></script>
+    <script src="../script/countries_v4.js"></script>
+</body>
+</html>

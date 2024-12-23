@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/countries_v3.css">
+    <title>REST Countries</title>
+</head>
+<body>
+    <header>
+        <nav class="pagination">
+            <button id="topPreviousPage" class="pagination-button previous-page">PRÉC</button>
+            <p id="topNumPage" class="page-number"></p>
+            <button id="topNextPage" class="pagination-button next-page">SUIV</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="country-list" class="country-list"></div>
+    </main>
+
+    <footer>
+        <nav class="pagination">
+            <button id="bottomPreviousPage" class="pagination-button previous-page">PRÉC</button>
+            <p id="bottomNumPage" class="page-number"></p>
+            <button id="bottomNextPage" class="pagination-button next-page">SUIV</button>
+        </nav>
+    </footer>
+
+    <div class="grey-filter hidden" id="greyFilter"></div>
+
+    <div class="country-detail-container hidden" id="countryDetailContainer">
+        <header>
+            <p class="country-detail-name" id="countryDetailName"></p>
+        </header>
+        <main class="country-detail-main" id="countryDetailMain">
+            <div class="country-detail-main-left" id="countryDetailMainLeft"></div>
+            <div class="country-detail-main-right">
+                <div class="country-detail-border">
+                    <p class="country-detail-border-name">Voisin(s) :</p>
+                    <ul class="country-detail-border-list" id="countryDetailBorderList"></ul>
+                </div>
+                <div class="country-detail-language">
+                    <p class="country-detail-language-name">Langue(s) :</p>
+                    <ul class="country-detail-language-list" id="countryDetailLanguageList"></ul>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <button class="country-detail-close hidden" id="countryDetailClose">Retour</button>
+        </footer>
+    </div>
+
+    <img class="flag-detail hidden" src="" alt="Drapeau Complet " id="flagDetail">
+
+    <script src="../data/data.js"></script>
+    <script src="../entity/Country.js"></script>
+    <script src="../entity/Currency.js"></script>
+    <script src="../entity/Language.js"></script>
+    <script src="../script/fill.js"></script>
+    <script src="../script/test.js"></script>
+    <script src="../script/countries_v3.js"></script>
+</body>
+</html>

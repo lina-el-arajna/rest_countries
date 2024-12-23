@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #212121;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > main {
+    display: flex;
+    justify-content: center;
+}
+
+.country-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: center;
+
+    gap: 2vw 0;
+
+    width: 85vw;
+}
+
+.country {
+    border-radius: 1.25vw;
+
+    background-color: #141414;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 15vw;
+}
+
+.country-flag {
+    object-fit: cover;
+    
+    border-radius: 1.25vw;
+
+    height: 10vw;
+    width: 15vw;
+
+    filter: grayscale(0);
+
+    transition: filter 0.4s;
+}
+
+.country-flag:hover {
+    filter: grayscale(0.5);
+    cursor: pointer;
+}
+
+.country-content {
+    margin: 1vw;
+
+    width: 13vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.25rem;
+
+    color: #ffffff;
+
+    transition: color 0.3s;
+}
+
+.country-content:hover {
+    color: #999999;
+    cursor: pointer;
+}
+
+.country-name {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+}
+
+.country-info {
+    margin: 0;
+}
+
+.overflowing {
+    /* Hide overflowing text */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    width: 12rem;
+}
+
+.pagination {
+    display: flex;
+
+    width: fit-content;
+    height: 2rem;
+
+    font-weight: 600;
+}
+
+.pagination-button {
+    background-color: #ffffff;
+    color: #000000;
+
+    border: none;
+    border-radius: 1rem;
+
+    width: 3rem;
+    height: 2rem;
+
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-button:hover {
+    cursor: pointer;
+    background-color: #d8d8d8;
+}
+
+.pagination-button:active {
+    background-color: #5f5f5f;
+    color: #ffffff;
+}
+
+.previous-page {
+    text-align: end;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.next-page {
+    text-align: start;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.page-number {
+    text-align: center;
+
+    width: 2.5rem;
+
+    align-self: center;
+
+    margin: 0;
+
+}
+
+body > header {
+    padding: 1vw;
+    margin: 2vw;
+
+    height: 20vh;
+    width: 81vw;
+
+    gap: 2vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #141414;
+
+    border-radius: 5vh;
+}
+
+body > footer {
+    padding: 1vw;
+
+    display: flex;
+    justify-content: center;
+}
+
+.grey-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    z-index: 1;
+}
+
+.flag-detail {
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    box-shadow: 0 0 2vw 1vw #666666;
+    
+    z-index: 3;
+    
+    height: 80vh;
+}
+
+.flag-detail:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.country-detail-container {
+    position: fixed;
+    top: 25vh;
+    left: 25vw;
+
+    width: 40vw;
+    height: 46vh;
+
+    padding: 2vh 2vw;
+
+    border-radius: 3vw;
+
+    background-color: #484848;
+
+    box-shadow: 0 0 2vw 1vw #252525;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.country-detail-container header {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    height: 7vh;
+}
+
+.country-detail-container footer {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+
+    height: 7vh;
+}
+
+.country-detail-main {
+    height: 32vh;
+    display: flex;
+}
+
+.country-detail-main-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+
+    width: 50%;
+}
+
+.country-detail-main-right {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.country-detail-border {
+    width: 50%;
+}
+
+.country-detail-language {
+    width: 50%;
+}
+
+.country-detail-name {
+    margin: 0;
+
+    font-size: x-large;
+
+    font-weight: 600;
+}
+
+.country-detail-close {
+    background-color: #ffffff;
+    color: #000000;
+
+    position: absolute;
+
+    border: none;
+    border-radius: 1rem;
+
+    width: 4rem;
+    height: 2rem;
+
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.country-detail-close:hover {
+    cursor: pointer;
+    background-color: #d8d8d8;
+}
+
+.country-detail-close:active {
+    background-color: #5f5f5f;
+    color: #ffffff;
+}
+
+.country-detail-line {
+    font-weight: 300;
+
+    margin: 0;
+}
+
+.country-detail-line strong {
+    font-weight: 600;
+}
+
+.country-detail-border-name {
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.country-detail-language-name {
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.country-detail-border-list {
+    font-weight: 300;
+}
+
+.country-detail-border-list {
+    font-weight: 300;
+}
+
+.country-detail-li {
+    font-weight: 300;
+}
+
+.country-detail-li-empty {
+    font-weight: 300;
+    font-style: italic;
+    color: #999999;
+    list-style: none;
+}
+
+.empty-list {
+    padding-left: 0;
+}
+
+.filter-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 2rem;
+}
+
+.filter-continent-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-language-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-country-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+
+    font-weight: 600;
+    font-size: x-large;
+}
+
+.filter-reset {
+    background-color: #ffffff;
+    color: #000000;
+
+    border: none;
+    border-radius: 1rem;
+
+    width: 7rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-reset:hover {
+    cursor: pointer;
+    background-color: #d8d8d8;
+}
+
+.filter-reset:active {
+    background-color: #5f5f5f;
+    color: #ffffff;
+}
